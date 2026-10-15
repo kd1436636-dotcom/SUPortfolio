@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Viewer</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #111; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  .wrap img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+
+<div class="wrap" id="pages"></div>
+
+<script>
+  // The PNG files must be in the same folder as this HTML file
+  const IMG = "part_1.png";   // fixed: closing quote + semicolon
+  const TOTAL = 8;
+
+  const pages = document.getElementById("pages");
+  for (let i = 1; i <= TOTAL; i++) {
+    pages.insertAdjacentHTML(
+      "beforeend",
+      `<img src="part_${i}.png" alt="Part ${i}" loading="lazy">`
+    );
+  }
+</script>
+
+</body>
+</html>
